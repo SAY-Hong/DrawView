@@ -18,10 +18,10 @@ struct ContentView2: View {
 }
 
 struct CusNavigationBackButton: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    var backButton : some View {  // <-- 👀 커스텀 버튼
+    @Environment(\.dismiss) private var dismiss // 이전 화면으로 돌아가게 하기
+    var backButton : some View {
         Button{
-            self.presentationMode.wrappedValue.dismiss()
+            dismiss()
         } label: {
             HStack {
                 Image(systemName: "chevron.left") // 화살표 Image
@@ -31,21 +31,23 @@ struct CusNavigationBackButton: View {
             }
         }
     }
+    
     var body: some View {
-        VStack {
-            Text("MyView")
-            
-            Button {
-                self.presentationMode.wrappedValue.dismiss()
-            } label: {
-                Text("Dismiss")
+        Button{
+            dismiss()
+        } label: {
+            HStack {
+                Image(systemName: "chevron.left") // 화살표 Image
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundStyle(Color.black)
+                    .padding()
             }
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: backButton)  // <-- 👀 버튼을 등록한다.
+        .navigationBarItems(leading: backButton)
     }
-    
 }
+
 
 #Preview {
     ContentView2()

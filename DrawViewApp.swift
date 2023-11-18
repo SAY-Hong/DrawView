@@ -11,7 +11,7 @@ import SwiftUI
 struct DrawViewApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FurnitureContentView()
         }
     }
 }
