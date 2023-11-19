@@ -12,6 +12,7 @@ struct ContentView2: View {
         NavigationView {
             NavigationLink(destination: CusNavigationBackButton()){
                 Text("Go to MyView")
+                
             }
         }
     }
