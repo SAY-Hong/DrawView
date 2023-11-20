@@ -9,6 +9,10 @@ import SwiftUI
 
 struct DetailView: View {
     @Environment(\.dismiss) private var dismiss // 이전 화면으로 돌아가게 하기
+    
+    @State private var currentIndex = 0
+    private let colors: [Color] = [.gray, .black, .yellow, .indigo]
+    
     var backButton : some View {
         Button{
             dismiss()
@@ -22,9 +26,47 @@ struct DetailView: View {
         }
     }
     var body: some View {
-        VStack {
-            Text("디테일 뷰")
+        VStack(alignment: .leading) {
+            TabView(selection: $currentIndex) {
+                ForEach(0..<colors.count, id: \.self) { index in
+                    ZStack {
+                        colors[index]
+                        Image("chair")
+                    }
+                }
+            }
+            .frame(width: 350,height: 400)
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+            
+
+            Text("Office") //kind
+                .foregroundStyle(.gray)
+            
+            HStack {
+                Text("Minimalist Chair") //productName
+                    .font(.system(size: 30))
+                    .bold()
+                Spacer()
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.gray)
+                        .frame(width: 40, height: 40)
+                
+                    Button(action: {}, label: {
+                        Image(systemName: "handbag")
+                            
+                    })
+                }
+            }
+           
+            
+            HStack {
+                ForEach(0..<5) { _ in
+                    Image(systemName: "star.fill")
+                }.font(.system(size: 8))
+            }
         }
+        .padding()
         .navigationTitle("Details")
         .navigationBarBackButtonHidden()
         .toolbar {

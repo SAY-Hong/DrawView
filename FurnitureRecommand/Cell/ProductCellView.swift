@@ -28,15 +28,6 @@ struct ProductCellView: View {
                 Text("$120") //price
                     .font(.system(size: 25))
                 
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(width: 50, height: 50)
-                
-                    Button(action: {}, label: {
-                        Image(systemName: "handbag")
-                    })
-                }
-                
             }
         }
         .padding()
