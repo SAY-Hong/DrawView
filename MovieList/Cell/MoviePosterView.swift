@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct MoviePosterView: View {
-    @State private var imageName = "roofi"
+    var movieName: String
     var body: some View {
-        Image(imageName)
+        Image(movieName)
             .resizable()
             .frame(width: 150, height: 200)
             .aspectRatio(contentMode: .fit)
-            
     }
 }
 
-#Preview {
-    MoviePosterView()
-}
+//#Preview {
+//    MoviePosterView(movie: movieInformation[0])
+//}

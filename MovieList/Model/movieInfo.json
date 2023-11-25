@@ -1,0 +1,26 @@
+[
+    { 
+        "id" : "1",
+        "movieTitle" : "Thor: Love and Thunder",
+        "movieData" : "JUL 8, 2022",
+        "movieImage" : "roofi"
+    },
+    { 
+        "id" : "2",
+        "movieTitle" : "Docter Strange in the Multiverse of Madness",
+        "movieData" : "MAY 6, 2022",
+        "movieImage" : "0"
+    },
+    { 
+        "id" : "3",
+        "movieTitle" : "Spider-Man: No Way Home",
+        "movieData" : "DEC 17, 2021",
+        "movieImage" : "roofi"
+    },
+    {
+        "id" : "4",
+        "movieTitle" : "Eternals",
+        "movieData" : "NOV 5, 2021",
+        "movieImage" : "0"
+    }
+]

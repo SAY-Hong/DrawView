@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct MovieTitleDateView: View {
+    var title: String
+    var date: String
+    
     var body: some View {
         //TODO: 간격 조정
         VStack(alignment: .leading, spacing: 50) {
-            Text("Docter Strange in the MultiVerse Of maddness")
+            Text(title)
                 .modifier(MovieTitleText(size: 20))
-            Text("JUL 8, 2022")
+            Text(date)
                 .modifier(DateText(size: 20))
         }
         .padding()
@@ -22,7 +25,7 @@ struct MovieTitleDateView: View {
 }
 
 #Preview {
-    MovieTitleDateView()
+    MovieTitleDateView(title: "rkskekfkf", date: "MAY 6, 2021")
         .background {
             Color.black
         }

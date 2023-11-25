@@ -10,14 +10,15 @@ import SwiftUI
 
 
 struct MovieListCellView: View {
+    var movie: MovieData
     var body: some View {
         ZStack(alignment: .leading) {
             //TODO: 커스텀으로 부분 둥글게 만들기 -> 얘도 Cell 따로 빼기
             Rectangle()
                 .frame(width: 340, height: 200)
             HStack(spacing: 0) {
-                MoviePosterView()
-                MovieTitleDateView()
+                MoviePosterView(movieName: movie.movieImage)
+                MovieTitleDateView(title: movie.movieTitle, date: movie.movieData)
             }
         }
 //        VStack {
@@ -40,5 +41,5 @@ struct MovieListCellView: View {
 }
 
 #Preview {
-    MovieListCellView()
+    MovieListCellView(movie: movies[0])
 }
