@@ -23,8 +23,9 @@ struct MovieDetailView: View {
                 Spacer()
                 TrailerView()
                 MovieReadMoreContentViews(detailMovieContent: movie.detailMovieContent)
-                
+               // ContentView() //ReadMore 버튼 클릭 시에만 띄워지게 하기.
             }
+//            ContentView()
         }
     }
 }
