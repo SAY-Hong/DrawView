@@ -15,7 +15,11 @@ struct MovieListCellView: View {
         ZStack(alignment: .leading) {
             //TODO: 커스텀으로 부분 둥글게 만들기 -> 얘도 Cell 따로 빼기
             Rectangle()
+                .fill(Color.black)
                 .frame(width: 340, height: 200)
+                .clipShape(
+                    .rect(topLeadingRadius: 20.0, bottomTrailingRadius: 20.0)
+                )
             HStack(spacing: 0) {
                 MoviePosterView(movieName: movie.movieImage)
                 MovieTitleDateView(title: movie.movieTitle, date: movie.movieData)

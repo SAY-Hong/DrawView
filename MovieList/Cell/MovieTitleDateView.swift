@@ -24,9 +24,10 @@ struct MovieTitleDateView: View {
     }
 }
 
-#Preview {
-    MovieTitleDateView(title: "rkskekfkf", date: "MAY 6, 2021")
-        .background {
-            Color.black
-        }
-}
+//#Preview {
+//    MovieTitleDateView(title: "rkskekfkf", date: "MAY 6, 2021")
+//        .background {
+//            Color.black
+//        }
+//}
+

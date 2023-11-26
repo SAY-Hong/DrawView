@@ -14,9 +14,13 @@ struct MoviePosterView: View {
             .resizable()
             .frame(width: 150, height: 200)
             .aspectRatio(contentMode: .fit)
+            .clipShape(
+                .rect(topLeadingRadius: 30.0, bottomTrailingRadius: 30.0)
+            )
     }
 }
 
 //#Preview {
-//    MoviePosterView(movie: movieInformation[0])
+//    MoviePosterView(movieName: "roofi")
 //}
+

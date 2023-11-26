@@ -12,6 +12,8 @@ struct MovieData: Codable, Identifiable {
     var movieTitle: String
     var movieData: String
     var movieImage: String
+    var detailMovieImage: String
+    var detailMovieContent: String
 }
 
 class MovieInformation: ObservableObject {
