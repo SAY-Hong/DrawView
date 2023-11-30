@@ -9,26 +9,22 @@ import SwiftUI
 
 struct MovieReadMoreContentViews: View {
     @State private var isViewed = true
-    @State private var showModal = false
+//    @State private var showModal = false
     var detailMovieContent: String
     var body: some View {
         VStack(spacing: 10) {
             Text(detailMovieContent)
                 .foregroundStyle(Color.black)
                 .font(.custom(MontStyle().montSemiBold, size: 26))
-                .lineLimit(7)
+                .lineLimit(isViewed ? 7 : 30)
                 .frame(width: 350)
-                .sheet(isPresented: $showModal, content: {
-                    Text("StoryLine")
-                    Text(detailMovieContent)
-                        .font(.custom(MontStyle().montSemiBold, size: 28))
-                })
-            Button(isViewed ? "Read More" : "Read Less") {
+            Button("Read More") {
+//                showModal.toggle()
                 isViewed.toggle()
-                showModal.toggle()
             }
             .bold()
             .foregroundStyle(Color.red)
+            .padding()
         }
     }
 }

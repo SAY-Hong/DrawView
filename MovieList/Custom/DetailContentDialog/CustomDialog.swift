@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct CustomDialog: View {
+    @State var isActive: Bool = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            VStack {
+                Button(action: { isActive = true }, label: {
+                    Text("Button")
+                })
+            }
+            
+            if isActive {
+                ContentView(isActive: .constant(true), action: {
+                    
+                })
+            }
+        }
     }
 }
 
