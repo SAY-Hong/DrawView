@@ -9,7 +9,16 @@ import SwiftUI
 
 struct topItem: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            VStack(alignment: .trailing, spacing: 3) {
+                Capsule()
+                    .fill(Color.black)
+                    .frame(width: 23, height: 4)
+                Capsule()
+                    .fill(Color.black)
+                    .frame(width: 15, height: 4)
+            }
+        }
     }
 }
 
